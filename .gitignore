@@ -1,3 +1,5 @@
 .idea/
+jenkins/*.pyc
 Scripts.iml
 out/
+
