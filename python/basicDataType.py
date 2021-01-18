@@ -15,7 +15,7 @@ NstringE = stringE.replace("\\\\","\\")#字符串替换
 listE = (NstringE.split(',')) #字符串分割
 
 def printInfo():
-    print "获取当前目录：" + os.getcwd()
+    print "获取当前目录：%s" %(os.getcwd())
     print os.path.basename(os.getcwd())
     print os.path.dirname(os.getcwd())
 
