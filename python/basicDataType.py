@@ -1,6 +1,7 @@
 # coding:utf-8
 
 import os
+import json
 
 sites = {'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu'}
 list1 = [('TMP', 'C:\\Users\\annie.wu\\AppData\\Local\\Temp'), ('PYTHONIOENCODING', 'UTF-8'), ('COMPUTERNAME', 'ANNIE-WU-PC')]
@@ -18,6 +19,13 @@ def printInfo():
     print "获取当前目录：%s" %(os.getcwd())
     print os.path.basename(os.getcwd())
     print os.path.dirname(os.getcwd())
+
+def getEnvironValuebyjson():
+    # with open('jsonErr.txt','r') as f:
+    with open('json.txt','r') as f:
+        jsonObject = json.loads(f.read().replace('\'','\"'))
+        print jsonObject
+        print ('\n%s\n%s\n%s\n...' %(jsonObject['TMP'],jsonObject['PYTHONIOENCODING'],jsonObject['COMPUTERNAME']))
 
 
 def getType(string):
@@ -39,7 +47,7 @@ def getType(string):
     return type
 
 def printEnviron():
-    # print environ
+    print environ
     # print getType(environ)
     # stringE = str(environ)#字符串包装
     # NstringE = stringE.replace("\\\\","\\")#字符串替换
@@ -76,5 +84,7 @@ if __name__ == '__main__':
 
     printEnviron()#按行输出环境变量
     getEnvironName()
+    print "================================="
+    getEnvironValuebyjson()
 
 
