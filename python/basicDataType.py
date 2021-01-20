@@ -23,7 +23,7 @@ def printInfo():
 def getEnvironValuebyjson():
     # with open('jsonErr.txt','r') as f:
     with open('json.txt','r') as f:
-        jsonObject = json.loads(f.read().replace('\'','\"'))
+        jsonObject = json.loads(f.read().replace('\"','\\"').replace('\'','\"'))
         print jsonObject
         print ('\n%s\n%s\n%s\n...' %(jsonObject['TMP'],jsonObject['PYTHONIOENCODING'],jsonObject['COMPUTERNAME']))
 
